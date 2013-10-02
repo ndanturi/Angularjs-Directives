@@ -1,0 +1,26 @@
+<div id="modal_slideShowEditor" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#120;</button>
+				<h3 id="myModalLabel">Gallery</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row" droppable-area>
+					<div ng-repeat="image in $parent.slideShow.images" class="slideShow-image col-sm-6 col-md-3 col-lg-3">
+						<img ng-src="{{image.src}}" style="height: 180px; width: 100%; display: block; margin-top: 10px;"/>
+						<span class="slideShow-hide">
+							<button class="btn" ng-click="slideShow.pop($index)"style="background-image:url('images/delete.png');
+background-repeat:no-repeat;"></button>
+						</span>
+					</div>
+					<button class="thumbnail col-sm-6 col-md-3 col-lg-3" id="launch_popover" data-toggle="popover" data-ccontainer="body" data-placement="left" data-html="true" style="height: 180px; display: block; margin-top: 10px; opacity: 0.7;"><div class="icon"></div><span class="glyphicon glyphicon-plus"></span><div class="text">Click here or drag and drop to upload images.</div></button>
+				</div>				
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-teal" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button class="btn btn-insert" data-dismiss="modal">Insert</button>
+			</div>
+		</div>
+	</div>
+</div>
