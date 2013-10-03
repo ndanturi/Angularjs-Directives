@@ -1,0 +1,49 @@
+<div id="modal_codeBlockEditor" class="modal row" tabindex="-1"	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#120;</button>
+				<h3 id="myModalLabel">Code Editor</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row row show-grid">
+					<div class="col-12 col-sm-12 col-lg-12">
+						<label class="grid-margin-top">Start Editing:</label>
+						<div class="btn-group offset1" ng-class="{open: open}">
+							<button class="btn btn-small btn-inverse no-radius">{{codeBlock.codemirror.mode}}</button>
+							
+							<button
+								class="btn btn-small btn-inverse dropdown-toggle no-radius"
+								ng-click="open=open" ng-init="open=false" data-toggle="dropdown" style="width:auto">
+								<span class="caret"></span>
+							</button>
+							
+							<ul class="dropdown-menu">
+								<li><a ng-click="codeBlock.set({mode : 'htmlmixed'})">HTML</a></li>
+								<li><a ng-click="codeBlock.set({mode : 'javascript'})">Javascript</a></li>
+								<li><a ng-click="codeBlock.set({mode : 'css'})">CSS</a></li>
+								<li><a ng-click="codeBlock.set({mode : 'plaintext'})">Plain Text</a></li>
+
+								<!-- dropdown menu links -->
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-9 col-sm-9 col-lg-12">
+						<div style="border: solid black 1px;">
+						<textarea ui-codemirror ui-refresh="codeMirrorRefresh"	ng-model="codeBlock.codemirror.contents">
+						</textarea>
+
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-teal" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button class="btn btn-insert" data-dismiss="modal">Insert</button>
+			</div>
+		</div>
+	</div>
+</div>
