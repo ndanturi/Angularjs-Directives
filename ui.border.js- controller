@@ -1,0 +1,75 @@
+/**
+ * This is where the copyright and author info goes
+ * remember: comments are stripped out by (good) minifiers
+ */
+app.controller('UI_BorderController',
+	// see http://docs.angularjs.org/guide/di#inlineannotation
+	['$scope', function ($scope) {
+
+    $scope.border = {
+        click_width_increase: function ($event) {
+            var intWidth = parseInt($scope.currentElement.style.borderWidth);
+            intWidth = (intWidth + 1) || 0;
+            $scope.currentElement.style.borderWidth = intWidth + 'px';
+        },
+
+        click_width_decrease: function ($event) {
+            var intWidth = parseInt($scope.currentElement.style.borderWidth);
+            intWidth = (intWidth - 1) || 0;
+
+            if (intWidth < 0) {
+                $scope.currentElement.style.borderWidth = "auto";
+            } else {
+                $scope.currentElement.style.borderWidth = intWidth + 'px';				
+            }
+        },
+
+        click_radius_increase: function ($event) {
+            var intWidth = parseInt($scope.currentElement.style.borderRadius);
+            intWidth = (intWidth + 1) || 0;
+            $scope.currentElement.style.borderRadius = intWidth + 'px';
+        },
+
+        click_radius_decrease: function ($event) {
+            var intWidth = parseInt($scope.currentElement.style.borderRadius);
+            intWidth = (intWidth - 1) || 0;
+
+            if (intWidth < 0) {
+                $scope.currentElement.style.borderRadius = "auto";
+            } else {
+                $scope.currentElement.style.borderRadius = intWidth + 'px';
+            }
+        },
+		
+		click_borderLeft_change: function ($event) { 
+            var intWidth = parseInt($scope.currentElement.style.borderLeftWidth);	
+            intWidth = (intWidth + 1) || 1;	
+            $scope.currentElement.style.borderLeftWidth = intWidth + 'px';			
+        },
+
+		click_borderRight_change: function ($event) { 
+            var intWidth = parseInt($scope.currentElement.style.borderRightWidth);	
+            intWidth = (intWidth + 1) || 1;	
+            $scope.currentElement.style.borderRightWidth = intWidth + 'px';
+        },
+		
+		click_borderTop_change: function ($event) { 
+            var intWidth = parseInt($scope.currentElement.style.borderTopWidth);	
+            intWidth = (intWidth + 1) || 1;	
+            $scope.currentElement.style.borderTopWidth = intWidth + 'px';
+        },
+		
+		click_borderBottom_change: function ($event) { 
+            var intWidth = parseInt($scope.currentElement.style.borderBottomWidth);	
+            intWidth = (intWidth + 1) || 1;	
+            $scope.currentElement.style.borderBottomWidth = intWidth + 'px';
+        },
+		
+		click_borderAll: function ($event) { 
+            var intWidth = parseInt($scope.currentElement.style.borderWidth);	
+            intWidth = (intWidth + 1) || 1;	
+            $scope.currentElement.style.borderWidth = intWidth + 'px';
+        },
+    };
+
+}]);
